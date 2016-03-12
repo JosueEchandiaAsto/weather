@@ -76,19 +76,19 @@ body {
 	}
 	.weather-card__img[data-img="aqp"]
 	{
-		background-image: url("aqp.jpg");
+		background-image: url("http://www.tvperu.gob.pe/sites/default/files/Plaza_de_Arequipa.jpg");
 	}
 	.weather-card__img[data-img="lima"]
 	{
-		background-image: url("lima.jpg");
+		background-image: url("http://impacto.net.pe/wp-content/uploads/2016/01/impacto_historia_180116_lima.jpg");
 	}
 	.weather-card__img[data-img="piura"]
 	{
-		background-image: url("piura.jpg");
+		background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Piura_Plaza_de_Armas.jpg/322px-Piura_Plaza_de_Armas.jpg");
 	}
 	.weather-card__img[data-img="aya"]
 	{
-		background-image: url("aya.jpg");
+		background-image: url("http://www.turismoperu.com/web/12172806/fotos/ayacucho-catedral.jpg");
 	}
 		.weather__info{
 			width: 60%;
