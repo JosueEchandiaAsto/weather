@@ -1,0 +1,143 @@
+html{
+	font-family: 'Ovo', sans-serif;
+	font-size: 150%
+}
+body {
+	padding: 0;
+	margin: 0;
+	background-color: white;
+}
+
+.main-header {
+	text-align: center;
+	background-color: #EA3546;
+	color: white;
+	padding: .5em;
+	margin: 0px;
+	font-size: 1em;
+	display: flex;
+	justify-content:center;
+}
+	.main-header__title1{
+		float: left;
+		font-size: 2em;
+		margin: auto .3em;
+	}
+	.main-header__title2{
+		font-size: 1em;
+		font-weight: normal;
+		border-top: 1px solid;
+		border-bottom: 1px solid;
+	}
+	@media screen and (max-width: 525px) {
+		.main-header{
+			background-color: #662E9B;
+		}
+	}
+.weather{
+	display: flex;
+	justify-content: center;
+	padding: 1em;
+	flex-wrap: wrap;
+}
+	.weather-card{
+		width: 20em;
+		height: 7em;
+		margin: 1em;
+		padding: .5em;
+		color: white;
+		display: flex;
+		justify-content: flex-star;
+		flex-wrap: wrap;
+	}
+
+	.weather-card[data-img="aqp"]
+	{
+		background-color: #F86624; 
+	}
+	.weather-card[data-img="lima"]
+	{
+		background-color: #F9C80E; 
+	}
+	.weather-card[data-img="piura"]
+	{
+		background-color: #3C91E6; 
+	}
+	.weather-card[data-img="aya"]
+	{
+		background-color: #662E9B; 
+	}
+	.weather-card__img{
+		width: 40%;
+		height: 100%;
+		float: left;
+		margin-right: 1.5em;
+		background-size: cover;
+	}
+	.weather-card__img[data-img="aqp"]
+	{
+		background-image: url("aqp.jpg");
+	}
+	.weather-card__img[data-img="lima"]
+	{
+		background-image: url("lima.jpg");
+	}
+	.weather-card__img[data-img="piura"]
+	{
+		background-image: url("piura.jpg");
+	}
+	.weather-card__img[data-img="aya"]
+	{
+		background-image: url("aya.jpg");
+	}
+		.weather__info{
+			width: 60%;
+			height: 100%
+		}
+			.weather-card__header{
+				text-align: center;
+				padding: .3em;
+				margin: 0;
+				font-family: Ovo;
+				border-bottom: 2px solid;
+				font-size: 1.5em;
+				font-weight: normal;
+				
+			}
+			.weather-card__date{
+				padding: .3em;
+				margin: 0;
+				font-weight: normal;
+				text-align: center;
+			}
+			.weather-card__list{
+				display: flex;
+				justify-content: center;
+				padding: 0;
+				margin: 0;
+			}
+			.weather-card__list__celsius{
+				list-style-type: none;
+				font-size: 2em;
+				padding: 0 .5em 0 0;
+				border-right: 1px solid;
+			}
+			.weather-card__list__faren{
+				list-style-type: none;
+				font-size: 2em;
+				padding: 0 0 0 .5em;
+			}
+	@media screen and (max-width: 525px) {
+			.weather-card{
+				height: 14em;
+				justify-content: center;
+			}
+			.weather-card__img{
+				height: 50%;
+				width: 100%;
+				margin: 0;
+			}
+			html{
+				font-size: 110%
+			}
+		}
