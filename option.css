@@ -3,8 +3,8 @@ body {
 	padding: 0;
 	margin: 0;
 	background-color: white;
+	font-size: 110%
 }
-
 .main-header {
 	text-align: center;
 	background-color: #EA3546;
@@ -34,18 +34,19 @@ body {
 .weather{
 	display: flex;
 	justify-content: center;
-	padding: 1em;
+	padding: 0;
 	flex-wrap: wrap;
 }
 	.weather-card{
 		width: 20em;
 		height: 7em;
-		margin: 1em;
-		padding: .5em;
+		margin: .5em;
+		padding: 0em;
 		color: white;
 		display: flex;
 		justify-content: flex-star;
 		flex-wrap: wrap;
+		border-radius: 25px;
 	}
 
 	.weather-card[data-img="aqp"]
@@ -90,7 +91,7 @@ body {
 	}
 		.weather__info{
 			width: 60%;
-			height: 100%
+			height: 100%;
 		}
 			.weather-card__header{
 				text-align: center;
@@ -136,16 +137,25 @@ body {
 				margin: 0;
 			}
 			html{
-				font-size: 100%
+				font-size: 80%
 			}
 		}
 	@media screen and (max-width: 700px) {
 		.weather-card{
 			width: 38%;
 		}
+		.weather-card__img {
+			background-position: center;
+		}
 	}
-	@media screen and (max-width: 415px) {
+	@media screen and (max-width: 520px) {
 		.weather-card{
-			width: 80%;
+			width: 15em;
+		}
+		html{
+			font-size: 100%;
+		}
+		.weather-card__img {
+			background-position: center;
 		}
 	}
