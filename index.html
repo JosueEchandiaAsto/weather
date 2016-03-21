@@ -4,66 +4,44 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Weather-Perú</title>
-		<link rel="stylesheet" type="text/css" href="option.css">
-		<link href='https://fonts.googleapis.com/css?family=Ovo' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/option.css">
 	</head>
 	<body>
 		<header class="main-header">
-			<h1 class="main-header__title1">Weather</h1>
-			<h2 class="main-header__title2">An awesomw way to see how we burn by global warming</h2>
+			<h1 class="main-header__title">Weather</h1>
+			<h2 class="main-header__description">An awesomw way to see how we burn by global warming</h2>
 		</header>
-		<section class="weather">
-		<div class="weather-card" data-img="aqp">
-			<div class="weather-card__img" data-img="aqp">
+		<nav class="navegacion">
+			<form action="" class="search">
+				<input data-searching type="text" data-input="cityAdd" class="search__text" placeholder="Escribe una Ciudad">
+				<div class="searching">
+					<input type="submit" data-button="add" class="search__button" value="Add City">
+					<button data-save-cities class="search__button">My Cities</button>
+					<button data-search class="search__button" >Eraser</button>
+				</div>
+			</form>
+			<div class="loader">Geolocalizando tu posición, por favor espere...</div>
+		</nav>
+		
+		<section class="weather" data-template>
+			<template id="weather--city" data-weather>
+			<div class="weather-card">
+				<img data-icon class="img">
+				<img data-figure class="weather-card__img" >
+				<div class="weather-card__info">
+					<h3 data-city class="weather-card__header"></h3>
+					<h4 data-time class="weather-card__time"></h4>
+					<ul class="weather-card__list">
+						<li data-temp="celsius"class="weather-card__list__celsius"></li>
+						<li data-temp="kelvin"class="weather-card__list__kelvin"></li>
+					</ul>
+				</div>
 			</div>
-			<div class="weather-card__info">
-				<h3 class="weather-card__header">Arequipa</h3>
-				<h4 class="weather-card__date">10:30 am</h4>
-				<ul class="weather-card__list">
-					<li class="weather-card__list__celsius">15°C</li>
-					<li class="weather-card__list__faren">22f</li>
-				</ul>
-			</div>
-		</div>
-
-		<div class="weather-card" data-img="lima">
-			<div class="weather-card__img" data-img="lima">
-			</div>
-			<div class="weather-card__info">
-				<h3 class="weather-card__header">Lima</h3>
-				<h4 class="weather-card__date">08:23 pm</h4>
-				<ul class="weather-card__list">
-					<li class="weather-card__list__celsius">17°C</li>
-					<li class="weather-card__list__faren">28f</li>
-				</ul>
-			</div>
-		</div>
-
-		<div class="weather-card" data-img="piura">
-			<div class="weather-card__img" data-img="piura">
-			</div>
-			<div class="weather-card__info">
-				<h3 class="weather-card__header">Piura</h3>
-				<h4 class="weather-card__date">07:50 am</h4>
-				<ul class="weather-card__list">
-					<li class="weather-card__list__celsius">15°C</li>
-					<li class="weather-card__list__faren">30f</li>
-				</ul>
-			</div>
-		</div>
-
-		<div class="weather-card" data-img="aya">
-			<div class="weather-card__img" data-img="aya">
-			</div>
-			<div class="weather-card__info">
-				<h3 class="weather-card__header">Ayacucho</h3>
-				<h4 class="weather-card__date">02:50 pm</h4>
-				<ul class="weather-card__list">
-					<li class="weather-card__list__celsius">30°C</li>
-					<li class="weather-card__list__faren">35f</li>
-				</ul>
-			</div>
-		</div>
+			</template>
 		</section>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="js/index.js"></script>
 	</body>
 </html>

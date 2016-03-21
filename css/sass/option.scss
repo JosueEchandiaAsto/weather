@@ -1,0 +1,258 @@
+@mixin display($aling,$wrap){
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: $aling;
+  -ms-flex-pack: $aling;
+  justify-content: $aling;
+  -webkit-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+@mixin padding-margin($pad,$mar){
+   padding: $pad;
+   margin: $mar;
+}
+$font: Lato;
+$color-main-header: #EA3546;
+$dimensionA: 768px;
+$dimensionB: 560px;
+
+body {
+  font-size: 130%;
+}
+         @media screen and (max-width: $dimensionA) {
+           html {
+             font-size: 80%;
+           }
+         }
+         @media screen and (max-width: $dimensionB) {
+           html{
+              font-size: 80%
+           }
+         }
+/*ENCABEZADO WEATHER*/
+.main-header {
+  color: white;
+  text-align: center;
+  background-color: $color-main-header;
+  font-family: $font;
+  font-size: 1em;
+  @include padding-margin(.5em,0);
+  @include display(center,wrap)
+}
+
+   .main-header__title {
+     float: left;
+     font-size: 2em;
+     margin: auto .3em;
+   }
+
+   .main-header__description {
+     font-size: 1em;
+     font-weight: normal;
+     border-top: 1px solid;
+     border-bottom: 1px solid;
+   }
+          @media screen and (max-width: $dimensionB) {
+            .main-header__description {
+              margin-bottom: .4em;
+            }
+          }
+
+.search{
+  @include display( flex-star ,nowrap);
+  align-items: stretch;
+  background-color: #F9C80E;
+}
+  .search__text{
+    width: 58%;
+    text-align: center;
+    color: #F9C80E;
+    border: 1px solid #F9C80E;
+   }
+   .searching{
+    width: 40%;
+    @include display( space-around ,nowrap);
+   }
+  .search__button{
+    padding: .3em;
+    background-color: #F9C80E;
+    font-family: $font;
+    color: white;
+    border: none; 
+  }
+
+    @media screen and (max-width: $dimensionB) {
+      .search{
+        flex-wrap: wrap;
+      }
+      .search__text{
+        padding: .2em;
+        width: 99.5%;
+        font-size: 1.1em;
+      }
+      .searching{
+        order: -1;
+        width: 99.5%
+      }
+      .search__button{
+        font-size: 1.1em;
+      }
+  }
+    @media screen and (max-width: 200px) {
+    .searching {
+      font-size: 90%
+    }
+  }
+.loader{
+  font-size: 1em;
+  color: grey;
+  margin-top: 1em;
+  text-align: center;
+}
+
+.weather {
+  @include display(center,wrap);
+  margin: 0 4em 0 4em;
+}
+           @media screen and (max-width: $dimensionA) {
+             .weather{
+                @include padding-margin(0,0 2em 0 2em);
+             }
+           }
+           @media screen and (max-width: 732px) {
+              .weather{
+                @include padding-margin(0,0 1.5em 0 1.5em);
+               }
+            }
+            @media screen and (max-width: 652px) {
+              .weather{
+                margin: 0 0 0 0;
+              }
+            }
+.weather-card {
+  width: 18em;
+  height: 7em;
+  margin: .7em;
+  color: white;
+  display: block;
+  border-radius: 25px;
+  font-family: $font;
+  background-color: #3C91E6;
+  }
+           @media screen and (max-width: $dimensionA) {
+              .weather-card {
+                width: 38%;
+                height: 14em;
+                @include display(center,wrap)
+             }
+           }
+           @media screen and (max-width: $dimensionB) {
+              .weather-card {
+                width: 22em;
+                height: 7em;
+                @include padding-margin(0 1em 0 0,.5em);
+                border-radius: 1em;
+                display: block;
+              }
+
+           }
+   .weather-card__img {
+     width: 40%;
+     height: 100%;
+     float: left;
+     margin-right: .2em;
+     border-radius: 25px;
+   }
+               @media screen and (max-width: $dimensionA) {
+                 .weather-card__img {
+                   height: 50%;
+                   width: 100%;
+                   @include padding-margin(0,0);
+                  }
+               }
+                @media screen and (max-width: $dimensionB) {
+                   .weather-card__img {
+                   border-radius: 1rem;
+                   width: 40%;
+                   height: 100%;
+                   float: left;
+                   @include padding-margin(0,0 4% 0 0)
+                   }
+                }
+
+   .weather__info {
+     width: 60%;
+     height: 100%;
+     font-family: Courier;
+     float: left;
+     }
+
+      .weather-card__header {
+         @include padding-margin(.1em,0);
+         text-align: center;
+         font-family: $font;
+         border-bottom: 2px solid;
+         font-size: 1.5em;
+         font-weight: normal;
+      }
+      .img {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+      }
+
+      .weather-card__time {
+        @include padding-margin(.1em,0);
+        font-weight: normal;
+        text-align: center;
+        font-family: Courier;
+      }
+
+      .weather-card__list {
+        @include display(center,nowrap);
+        @include padding-margin(0,0);
+      }
+
+         .weather-card__list__celsius {
+           list-style-type: none;
+           font-size: 2.5em;
+           @include padding-margin(0 .3em 0 0,0);
+           border-right: 1px solid;
+         }
+         .weather-card__list__celsius::after {
+          content: "C°";
+          font-size: .5em;
+        }
+
+         .weather-card__list__kelvin {
+           list-style-type: none;
+           font-size: 2.5em;
+           @include padding-margin(0 0 0 .3em,0);
+         }
+         .weather-card__list__kelvin::after {
+          content: "K";
+          font-size: .5em;
+        }
+                @media screen and (min-width: $dimensionA) {
+                   .weather-card__list__celsius {
+                   font-size: 2.3em;
+                   @include padding-margin(0 .2em 0 0,0);
+                   }
+                   .weather-card__list__kelvin {
+                   font-size: 2.3em;
+                   @include padding-margin(0 0 0 .2em,0);
+                   }
+                   .weather-card{
+                    padding-right: .3em;
+                   }
+                   .weather-card__header {
+                    @include padding-margin(.2em,0);
+                   }
+                   .weather-card__time {
+                    font-size: 1.2em;
+                    @include padding-margin(.1em 0 0 0,0)
+                   }
+                }
+    
